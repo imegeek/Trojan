@@ -65,8 +65,7 @@ bash trojan.sh
         then
 cd $HOME
 rm -rf Trojan
-git clone https://github.com/abhackerofficial/Trojan > /dev/null 2>&1
-cd Trojan && bash trojan.sh
+git clone https://github.com/abhackerofficial/Trojan > /dev/null 2>&1 && cd Trojan && bash trojan.sh
 
         elif [[ $char = "4" ]] || [[ $char = "04" ]]
         then
