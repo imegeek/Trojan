@@ -63,6 +63,7 @@ bash trojan.sh
 
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
         then
+echo
 echo 'Updating Please wait...' | lolcat -a
 cd $HOME
 rm -rf Trojan
