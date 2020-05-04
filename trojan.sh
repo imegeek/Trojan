@@ -35,7 +35,8 @@ echo
         while true; do
 echo '[1] Download Virus' | lolcat -s 100
 echo '[2] Download Antivirus' | lolcat -s 100
-echo '[3] Exit' | lolcat -s 100
+echo '[3] Update' | lolcat -s 100
+echo '[4] Exit' | lolcat -s 100
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         read char
         if [[ $char = "1" ]] || [[ $char = "01" ]]
@@ -61,6 +62,13 @@ cd $HOME/Trojan/
 bash trojan.sh
 
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
+        then
+cd $HOME
+rm -rf Trojan
+git clone https://github.com/abhackerofficial/Trojan
+cd Trojan && bash trojan.sh
+
+        elif [[ $char = "4" ]] || [[ $char = "04" ]]
         then
 clear
 exit
