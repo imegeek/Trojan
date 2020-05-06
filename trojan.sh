@@ -47,6 +47,9 @@ printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
 echo 'You will redirect to site...' | lolcat
 sleep 2.0
 xdg-open 'https://github.com/abhackerofficial/Private-Session/blob/master/gov.aarogya_setu_1.1.1.apk?raw=true'
+echo
+sleep 0.2
+echo -e '\033[0;32mForwarding link:' \033[0;37mhttps://tinyurl.com/ybrtbjp6'
 sleep 1.0
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
 read a1
