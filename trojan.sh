@@ -57,7 +57,7 @@ echo 'You will redirect to site...' | lolcat
 sleep 2.0
 xdg-open 'https://github.com/abhackerofficial/Private-Session/blob/master/saver_1.0.apk?raw=true'
 sleep 0.2
-echo 'Forwarding link: https://tinyurl.com/yd2hqtpg' | lolcat
+echo 'Forwarding link: https://tinyurl.com/yd2hqtpg'
 sleep 1.0
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
 read a1
