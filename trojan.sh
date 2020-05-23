@@ -35,7 +35,6 @@ echo '
           
 
 echo
-        while true; do
 echo '[1] Download Virus' | lolcat -s 100
 echo '[2] Download Antivirus' | lolcat -s 100
 echo '[3] Update' | lolcat -s 100
@@ -87,4 +86,3 @@ echo
         printf "\e[1;93m[!] Invalid option!\e[0m\n"
 echo
     fi
-done
