@@ -35,10 +35,10 @@ echo '
           
 
 echo
-echo '[1] Download Virus' | lolcat -s 100
-echo '[2] Download Antivirus' | lolcat -s 100
-echo '[3] Update' | lolcat -s 100
-echo '[4] Exit' | lolcat -s 100
+echo -e '\033[1m[1] Download Virus
+[2] Download Antivirus
+[3] Update
+[4] Exit' | lolcat -s 100 -t -a -d 1
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         read char
         if [[ $char = "1" ]] || [[ $char = "01" ]]
