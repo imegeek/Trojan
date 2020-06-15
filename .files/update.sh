@@ -25,6 +25,7 @@ sleep 1
 echo -ne "\033[0m\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!\033[0m\r"
 echo -ne "\033[0m"
 sleep 2
+cd ..
 exit
 fi
 echo -ne "$B[$N››››››.......$B] $BG[Founded!]\r"
