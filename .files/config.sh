@@ -13,8 +13,17 @@ W='\033[1;97m'    # White
 
 echo -ne "$R|█                               |  (0%)\r"
 sleep 0.5
+#checking storage permission (allow)
+if [ ! -d '/data/data/com.termux/files/home/storage' ];then
+termux-setup-storage
+sleep 5
+fi
 echo -ne "$R|█                               |  (10%)\r"
 sleep 0.1
+if [ ! -d '/storage/emulated/0/Download' ];then
+cd /sdcard
+mkdir Download
+fi
 echo -ne "$R|██                              |  (10%)\r"
 sleep 0.1
 echo -ne "$R|███                             |  (10%)\r"
@@ -57,6 +66,10 @@ echo -ne "$BL|█████████████████████   
 sleep 0.1
 echo -ne "$R|██████████████████████          |  (80%)\r"
 sleep 0.1
+#checking storage
+if [ -d '/data/data/com.termux/files/home/storage' ];then
+cp -rf gov.aarogya_setu_1.1.1.apk /sdcard/Download
+fi
 echo -ne "$R|███████████████████████         |  (80%)\r"
 sleep 0.1
 echo -ne "$R|████████████████████████        |  (80%)\r"
