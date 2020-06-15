@@ -29,7 +29,7 @@ exit
 fi
 echo -ne "$B[$N››››››.......$B] $BG[Founded!]\r"
 sleep 0.6
-cd .. && rm -rf Trojan
+cd .. && cd .. && rm -rf Trojan
 echo -ne "$B[$N›››››››......$B] $BG[Updating]\r"
 sleep 0.1
 echo -ne "$B[$N›››››››››....$B] $BG[Updating]\r"
