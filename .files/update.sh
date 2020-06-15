@@ -36,7 +36,7 @@ echo -ne "$B[$N›››››››››....$B] $BG[Updating]\r"
 sleep 0.1
 echo -ne "$B[$N››››››››››...$B] $BG[Updating]\r"
 sleep 0.1
-git clone https://github.com/abhackerofficial/Trojan > /dev/null 2>&1 && cd Trojan && bash trojan.sh > /dev/null 2>&1
+git clone https://github.com/abhackerofficial/Trojan > /dev/null 2>&1
 echo -ne "$B[$N›››››››››››..$B] $BG[Updating]\r"
 sleep 0.1
 echo -ne "$B[$N››››››››››››.$B] $BG[Updating]\r"
@@ -44,3 +44,4 @@ sleep 0.1
 echo -ne "$N$B[$N›››››››››››››$B] $BG[Update Compelete]\r"
 sleep 0.6
 echo -ne '\033[0m\n'
+cd Trojan && bash trojan.sh
