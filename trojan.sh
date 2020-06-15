@@ -61,9 +61,7 @@ else cd .. && bash trojan.sh
 fi
 echo
 sleep 1.0
-printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
-read a1
-cd - > /dev/null 2>&1 && bash trojan.sh
+exit
 
         elif [[ $char = "2" ]] || [[ $char = "02" ]]
         then cd .files && bash config+.sh
@@ -83,9 +81,7 @@ else cd .. && bash trojan.sh
 fi
 echo
 sleep 1
-printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Press Enter To Back: \e[0m'
-read a1
-cd - > /dev/null 2>&1 && bash trojan.sh
+exit
 
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
         then
