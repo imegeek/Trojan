@@ -1,8 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 clear
-command -v ruby > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not installed, Now Installing."; apt install ruby -y; }
-command -v lolcat > /dev/null 2>&1 || { echo >&2 "I require ssh but it's not installed, Now Installing."; gem install lolcat; }
+command -v ruby > /dev/null 2>&1 || { echo >&2 "I require ruby but it's not installed, Now Installing."; apt install ruby -y; }
+command -v lolcat > /dev/null 2>&1 || { echo >&2 "I require lolcat but it's not installed, Now Installing."; gem install lolcat; }
 echo '
                                    █████████████████████
                                 ████▀─────────────────▀████
