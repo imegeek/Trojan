@@ -44,6 +44,7 @@ printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         if [[ $char = "1" ]] || [[ $char = "01" ]]
         then echo
 cd .files && bash config.sh
+echo
 sleep 0.8
 echo -e '\033[1;92mForwarding link: \033[0mhttps://tinyurl.com/y7ufkdfs'
 sleep 0.2
@@ -66,6 +67,8 @@ bash trojan.sh
         elif [[ $char = "2" ]] || [[ $char = "02" ]]
         then echo
 cd .files && bash config+.sh
+sleep 0.8
+echo
 echo -e '\033[0;92mForwarding link: \033[0mhttps://tinyurl.com/y8rm36ux'
 sleep 0.2
 echo
