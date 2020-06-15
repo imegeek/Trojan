@@ -11,19 +11,24 @@ P='\033[1;95m'    # Purple
 C='\033[1;96m'    # Cyan
 W='\033[1;97m'    # White
 
-echo -ne "$R|█                               |  (0%)\r"
-sleep 0.5
+echo
 #checking storage permission (allow)
 if [ ! -d '/data/data/com.termux/files/home/storage' ];then
 termux-setup-storage
 sleep 5
 fi
-echo -ne "$R|█                               |  (10%)\r"
-sleep 0.1
+if [ ! -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
+echo
+fi
 if [ ! -d '/storage/emulated/0/Download' ];then
 cd /sdcard
 mkdir Download
 fi
+if [ ! -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
+echo -ne "$R|█                               |  (0%)\r"
+sleep 0.5
+echo -ne "$R|█                               |  (10%)\r"
+sleep 0.1
 echo -ne "$R|██                              |  (10%)\r"
 sleep 0.1
 echo -ne "$R|███                             |  (10%)\r"
@@ -93,3 +98,4 @@ sleep 0.5
 echo -ne "$G|Virus Saved To Dir : emulated/0/Download|          \r"
 sleep 2
 echo -ne '\n'
+fi
