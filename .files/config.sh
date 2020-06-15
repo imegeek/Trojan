@@ -11,7 +11,6 @@ P='\033[1;95m'    # Purple
 C='\033[1;96m'    # Cyan
 W='\033[1;97m'    # White
 
-echo
 #checking storage permission (allow)
 if [ ! -d '/data/data/com.termux/files/home/storage' ];then
 termux-setup-storage
