@@ -90,7 +90,7 @@ cd - > /dev/null 2>&1 && bash trojan.sh
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
         then
 echo
-echo 'Updating Please wait...' | lolcat -a -d 1 -t -s 100
+echo -e '\033[1mUpdating Please wait...' | lolcat -a -d 1 -t -s 100
 echo
 cd .files && bash update.sh
 
