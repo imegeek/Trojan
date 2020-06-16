@@ -24,6 +24,7 @@ cd /sdcard
 mkdir Download
 fi
 if [ ! -f '/storage/emulated/0/Download/gov.aarogya_setu_1.1.1.apk' ];then
+tput civis
 echo -ne "$R|█                               |  (0%)\r"
 sleep 0.5
 echo -ne "$R|█                               |  (10%)\r"
@@ -97,4 +98,5 @@ sleep 0.5
 echo -ne "$G[⬇] Virus Saved To Dir : emulated/0/Download\r"
 sleep 2
 echo -ne '\n'
+tput cnorm
 fi
