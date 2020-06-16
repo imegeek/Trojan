@@ -95,7 +95,7 @@ echo -ne "$C|██████████████████████�
 sleep 0.1
 echo -ne "$NC|████████████████████████████████|  (100%)\r"
 sleep 0.5
-echo -ne "$G[⬇]Antivirus Saved To Dir : emulated/0/Download\r"
+echo -ne "$G[⬇] Antivirus Saved To Dir : emulated/0/Download\r"
 sleep 2
 echo -ne '\n'
 tput cnorm
