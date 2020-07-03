@@ -48,13 +48,17 @@ echo '
           
 
 echo
-echo -e '\033[1m[1] Download Virus
-[2] Download Antivirus
-[3] Update
-[4] Exit' | lolcat -s 100 -t -a -d 1
+echo -e '\033[1m[1] Start Server
+[2] Download Virus
+[3] Download Antivirus
+[4] Update
+[5] Exit' | lolcat -s 100 -t -a -d 1
 printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         read char
         if [[ $char = "1" ]] || [[ $char = "01" ]]
+        then cd .server && bash config.sh
+
+        elif [[ $char = "2" ]] || [[ $char = "02" ]]
         then cd .files && bash config.sh
 echo
 sleep 0.8
@@ -74,7 +78,7 @@ echo
 sleep 1.0
 exit
 
-        elif [[ $char = "2" ]] || [[ $char = "02" ]]
+        elif [[ $char = "3" ]] || [[ $char = "03" ]]
         then cd .files && bash config+.sh
 echo
 sleep 0.8
@@ -94,14 +98,14 @@ echo
 sleep 1
 exit
 
-        elif [[ $char = "3" ]] || [[ $char = "03" ]]
+        elif [[ $char = "4" ]] || [[ $char = "04" ]]
         then
 echo
 echo -e '\033[1mUpdating Please wait...' | lolcat -a -d 1 -t -s 100
 echo
 cd .files && bash update.sh
 
-        elif [[ $char = "4" ]] || [[ $char = "04" ]]
+        elif [[ $char = "5" ]] || [[ $char = "05" ]]
         then
 clear
 exit
