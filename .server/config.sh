@@ -65,12 +65,11 @@ fi
 fi
 fi
 
+clear
+echo && echo
 NC='\033[0m\033[1m'
 BL='\033[1;100m'
 
-echo""
-echo""
-clear
 command -v tput > /dev/null 2>&1 || apt install ncurses-utils &> /dev/null
 
 trap '' 2
