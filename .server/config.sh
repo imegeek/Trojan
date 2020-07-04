@@ -65,9 +65,7 @@ fi
 fi
 fi
 
-clear
-echo && echo
-;
+clear && echo && echo
 NC='\033[0m\033[1m'
 BL='\033[1;100m'
 
