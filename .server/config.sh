@@ -67,6 +67,7 @@ fi
 NC='\033[0m\033[1m'
 BL='\033[1;100m'
 
+clear
 command -v tput > /dev/null 2>&1 || apt install ncurses-utils &> /dev/null
 
 trap '' 2
@@ -106,5 +107,4 @@ echo
 printf "\e[1;92m[\e[0m!\e[1;92m] \e[1;90;102mCTRL+C\e[0m\e[1;92m TO EXIT\e[0m"
 cd public
 php -S localhost:8080 > /dev/null 2>&1
-
 
