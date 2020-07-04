@@ -64,6 +64,28 @@ fi
 fi
 fi
 
+NC='\033[0m\033[1m'
+BL='\033[1;100m'
+
+command -v tput > /dev/null 2>&1 || apt install ncurses-utils &> /dev/null
+
+trap '' 2
+tput civis
+echo -ne "$BL[0] Please Turn On Your Mobile Hotspot $NC\r"
+sleep 1
+echo -ne "$BL[1] Please Turn On Your Mobile Hotspot $NC.\r"
+sleep 1
+echo -ne "$BL[2] Please Turn On Your Mobile Hotspot $NC..\r"
+sleep 1
+echo -ne "$BL[3] Please Turn On Your Mobile Hotspot $NC...\r"
+sleep 1
+echo -ne "$BL[√] Please Turn On Your Mobile Hotspot $NC...\r"
+sleep 6
+echo -ne '\n'
+tput cnorm
+trap 5
+echo""
+
 if [[ $checkngrok == *'ngrok'* ]]; then
 pkill -f -2 ngrok > /dev/null 2>&1
 killall -2 ngrok > /dev/null 2>&1
