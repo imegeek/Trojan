@@ -100,3 +100,4 @@ sleep 2
 echo -ne '\n'
 tput cnorm
 fi
+
