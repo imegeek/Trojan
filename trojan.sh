@@ -66,7 +66,6 @@ printf $'\n\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Choose an option: \e[0m'
 
         elif [[ $char = "2" ]] || [[ $char = "02" ]]
         then cd database && bash decrypt.sh
-fi
 
         elif [[ $char = "3" ]] || [[ $char = "03" ]]
         then cd .files && bash config.sh
