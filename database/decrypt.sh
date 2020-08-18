@@ -237,10 +237,10 @@ fi
 elif [[ $options = "24" ]];then
 storage
 if [ ! -f '/storage/emulated/0/Download/.apk' ];then
-cp WhatsApp.apk /sdcard/Download
-echo;echo -e "[⬇] WhatsApp.apk Saved = \e[0;92m[ emulated/0/Download ]\e[0m\n"
+cp Whatsapp.apk /sdcard/Download
+echo;echo -e "[⬇] Whatsapp.apk Saved = \e[0;92m[ emulated/0/Download ]\e[0m\n"
 else
-echo;echo -e "[!] WhatsApp.apk was exist = \e[0;91m[ emulated/0/Download ]\e[0m\n"
+echo;echo -e "[!] Whatsapp.apk was exist = \e[0;91m[ emulated/0/Download ]\e[0m\n"
 fi
 
 else
