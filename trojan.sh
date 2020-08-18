@@ -20,7 +20,7 @@ echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
    exit
 fi; }
 
-echo '
+echo -e '\e[1m
                                      █████████████████████
 C                                 ████▀─────────────────▀████
 O                              ███▀───────────────────────▀███
@@ -50,10 +50,9 @@ C                                     ██──█──█──█──█
 I                                     ██──█──█──█──██
 A                                     ██──█──█──█──██
 L                                     ██──█──█──█──██
-                                       █▄▄█▄▄█▄▄█▄▄█ ' | lolcat -a -t -d 1 -s 500
+                                       █▄▄█▄▄█▄▄█▄▄█ \n' | lolcat -a -t -d 1 -s 500
 
 
-echo
 echo -e '\033[1m[1] Start Server
 [2] Download Virus
 [3] Download Antivirus
