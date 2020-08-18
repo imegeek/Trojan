@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-clear
+cd - &> /dev/null ; cd - &> /dev/null; clear
 command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed, Now Installing."; apt install php -y; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 if [[ "$connection" != 0 ]]
 then clear
