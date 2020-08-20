@@ -1,5 +1,8 @@
 #!/usr/bin/bash
 
+HIDCRSR(){ echo -en "\033[?25l";}
+NORM(){ echo -en "\033[?12l\033[?25h";}
+
 storage() {
 if [ ! -d '/data/data/com.termux/files/home/storage' ];then
 termux-setup-storage
@@ -24,10 +27,7 @@ echo -e "\e[1m
 progress() {
 NC='\033[0m\e[1m'
 BL='\033[1;90m'   # Black
-G='\033[1;92m'    # Green
-
-HIDCRSR(){ echo -en "\033[?25l";}
-NORM(){ echo -en "\033[?12l\033[?25h";}
+G='\033[1;92m'    # 
 
 HIDCRSR
 echo -e "\n"
@@ -279,6 +279,7 @@ echo;echo -e "[!] Whatsapp.apk was exist = \e[0;91m[ emulated/0/Download ]\e[0m\
 fi
 
 else
+HIDCRSR
 echo -ne "\e[0;91mYou Entred Wrong Option\e[1;92m   \e[0m\r"
 sleep 0.5
 echo -ne "\e[0;91mYou Entred Wrong Option\e[1;92m.  \e[0m\r"
@@ -287,6 +288,7 @@ echo -ne "\e[0;91mYou Entred Wrong Option\e[1;92m.. \e[0m\r"
 sleep 0.5
 echo -ne "\e[0;91mYou Entred Wrong Option\e[1;92m...\e[0m\r"
 sleep 0.5
+NORM
 cd - > /dev/null 2>&1
 bash trojan.sh
 fi
@@ -301,10 +303,12 @@ read pass
 if [[ $pass = "//2020" ]];then
 printf "\e[0m"
 printf "Re-Enter Archive Password : "
-unrar x encrypt.rar > /dev/null 2>&1;echo "OK"
+unrar x encrypt.rar > /dev/null 2>&1;
+if [ -f "/data/data/com.termux/files/home/Trojan/database/Facebook.apk" ];then
+echo -e "\e[0;92mDecrypted !"
+else echo -e "\e[0;91mPassword not matching... !" ;fi
 program
 else
 echo -e "\e[0;91mProgram aborted / Wrong password\e[0m"
 fi
 fi
-
