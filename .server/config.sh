@@ -3,11 +3,30 @@
 HIDE(){ echo -en "\033[?25l";}
 NORM(){ echo -en "\033[?12l\033[?25h";}
 
-clear
 echo""
-echo""
+spin () {
+
+local pid=$!
+local delay=0.25
+local spinner=( '' '.' '..' '...' )
+
+while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
+
+for i in "${spinner[@]}"
+do
+	HIDE
+	echo -ne "\e[1;92m\r[\e[0m+\e[1;92m] Downloading Ngrok\033[1;92m$i\033[0m   ";
+	sleep $delay
+        printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b";
+done
+done
+printf "                                                         \r"
+}
+
+trap '' 2
+(
 if [[ -e ngrok ]]; then
-echo ""
+sleep 0
 else
 command -v unzip > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require unzip but it's not installed, Now Installing.\e[0m"; pkg install unzip -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 if [[ "$connection" != 0 ]]
@@ -27,6 +46,8 @@ then clear
 echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
    exit
 fi ; }
+
+
 printf "\e[1;92m[\e[0m+\e[1;92m] Downloading Ngrok...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
@@ -67,15 +88,19 @@ exit 1
 fi
 fi
 fi
+) &> /dev/null & spin
+trap 5
 
-NC='\033[0m\033[1m'
-BL='\033[1;100m'
+NC="$(printf '\033[0m\033[1m')"
+BL="$(printf '\033[1;100m')"
+BD="$(printf '\033[0;1m')"
+GN="$(printf '\033[90;102m')"
+GR="$(printf '\033[1;92m')"
+RD="$(printf '\033[97;101m')"
 
-command -v tput > /dev/null 2>&1 || apt install ncurses-utils &> /dev/null
 printf "$NC"
-clear ; echo ; echo;
 HIDE
-echo -e "${BL}[!] Note : If you're turned on Hotspot then Share link will be visible.$NC"
+echo -e "${GR}[${BD}!${GR}] ${GN} Note:${BD} If you're turned on Hotspot then Share link will be visible."
 echo""
 sleep 2
 echo -ne "[5] Turn on Your Hotspot within 5 sec\r"
@@ -112,6 +137,6 @@ exit 1
 fi
 printf "\e[1;92m[\e[0m\e[1m+\e[1;92m] Share \e[0m\e[1;97;101mHTTPS\e[0m\e[1;92m link:\e[0m\e[1;77m %s\e[0m\n" $link
 echo
-printf $"\e[1;92m[\e[0m!\e[1;92m] \e[1;90;102mCTRL+C\e[0m\e[1;92m TO EXIT\e[0m"
+printf "${GR}[${BD}!${GR}] ${GN}CTRL+C ${BD}TO EXIT"
 cd public
 php -S localhost:8080 > /dev/null 2>&1
