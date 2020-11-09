@@ -3,6 +3,25 @@
 HIDE(){ echo -en "\033[?25l";}
 NORM(){ echo -en "\033[?12l\033[?25h";}
 
+command -v unzip > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require unzip but it's not installed, Now Installing.\e[0m"; pkg install unzip -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
+if [[ "$connection" != 0 ]]
+then clear
+echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
+   exit
+fi ; }
+command -v php > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require php but it's not installed, Now Installing.\e[0m"; pkg install php -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
+if [[ "$connection" != 0 ]]
+then clear
+echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
+   exit
+fi ; }
+command -v wget > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require wget but it's not installed, Now Installing.\e[0m"; pkg install wget -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
+if [[ "$connection" != 0 ]]
+then clear
+echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
+   exit
+fi ; }
+
 echo""
 spin () {
 
@@ -26,28 +45,8 @@ printf "                                                         \r"
 trap '' 2
 (
 if [[ -e ngrok ]]; then
-sleep 0
+pwd &> /dev/null
 else
-command -v unzip > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require unzip but it's not installed, Now Installing.\e[0m"; pkg install unzip -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
-if [[ "$connection" != 0 ]]
-then clear
-echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
-   exit
-fi ; }
-command -v php > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require php but it's not installed, Now Installing.\e[0m"; pkg install php -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
-if [[ "$connection" != 0 ]]
-then clear
-echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
-   exit
-fi ; }
-command -v wget > /dev/null 2>&1 || { echo -e >&2 "\033[1;91mI require wget but it's not installed, Now Installing.\e[0m"; pkg install wget -y; clear; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
-if [[ "$connection" != 0 ]]
-then clear
-echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
-   exit
-fi ; }
-
-
 printf "\e[1;92m[\e[0m+\e[1;92m] Downloading Ngrok...\n"
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
@@ -103,22 +102,22 @@ HIDE
 echo -e "${GR}[${BD}!${GR}] ${GN} Note:${BD} If you're turned on Hotspot then Share link will be visible."
 echo""
 sleep 2
-echo -ne "[5] Turn on Your Hotspot within 5 sec\r"
+echo -ne "[5] Turn on Your Hotspot within 5 Sec       \r"
 sleep 0.5
-echo -ne "[5] Turn on Your Hotspot within 5 sec.\r"
+echo -ne "[5] Turn on Your Hotspot within 5 Sec.      \r"
 sleep 0.5
-echo -ne "[4] Turn on Your Hotspot within 5 sec..\r"
+echo -ne "[4] Turn on Your Hotspot within 5 Sec..     \r"
 sleep 0.5
-echo -ne "[4] Turn on Your Hotspot within 5 sec...\r"
+echo -ne "[4] Turn on Your Hotspot within 5 Sec...    \r"
 sleep 0.5
-echo -ne "[3] Turn on Your Hotspot within 5 sec\r"
+echo -ne "[3] Turn on Your Hotspot within 5 Sec       \r"
 sleep 1
-echo -ne "[2] Turn on Your Hotspot within 5 sec.\r"
+echo -ne "[2] Turn on Your Hotspot within 5 Sec.      \r"
 sleep 1
-echo -ne "[1] Turn on Your Hotspot within 5 sec.\r"
+echo -ne "[1] Turn on Your Hotspot within 5 Sec.      \r"
 sleep 1
-echo -ne "[0] Turn on Your Hotspot within 5 sec...\r"
-sleep 1
+echo -ne "[0] Turn on Your Hotspot within 5 Sec...    \r"
+sleep 3
 NORM
 
 if [[ $checkngrok == *'ngrok'* ]]; then
