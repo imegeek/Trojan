@@ -1,7 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
 cd - &> /dev/null ; cd - &> /dev/null; clear
-command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed, Now Installing."; apt install php -y; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
+command -v php > /dev/null 2>&1 || { echo >&2 "I require php but it's not installed, Now Installing."; apt update ; apt upgrade -y ; apt install php -y; connection="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 if [[ "$connection" != 0 ]]
 then clear
 echo -e "\033[1;91m[\033[1;92m-\033[1;91m] No Internet\033[1;92m connection!"
